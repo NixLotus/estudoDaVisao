@@ -26,6 +26,14 @@ btnContraste.setAttribute("aria-pressed", ativo);
 btnAumentar.addEventListener('click',()=>{
     if (tamanhoAtualFonte< 150){
         tamanhoAtualFonte += 10;
-        document.documentElement.style.frontSize
+        document.documentElement.style.frontSize =`${tamanhoAtualFonte}%`
+    }
+})
+
+// função diminuir texto
+btnDiminuir.addEventListener("click," ()=>{
+    if(tamanhoAtualFonte < 90){
+        tamanhoAtualFonte -= 10;
+        document.documentElement.style.frontSize = `${tamanhoAtualFonte}%`
     }
 })

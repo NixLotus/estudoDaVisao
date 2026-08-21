@@ -1,35 +1,84 @@
+/* --- VARIÁVEIS GERAIS E TEMA PADRÃO --- */
 :root {
-    --bg-color: #f4f6f8;
-    --text-color: #333333;
-    --card-bg: #ffffff;
+    --bg-primary: #f4f6f8;
+    --bg-card: #ffffff;
+    --bg-subtle: #f8fafc;
+    --text-primary: #333333;
+    --text-secondary: #475569;
+    --text-heading: #0f172a;
+    --border-color: #e2e8f0;
+    --accent-teal: #0d9488;
+    --accent-amber: #d97706;
+    --hero-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --toolbar-bg: #0f172a;
+    --toolbar-text: #ffffff;
     --btn-bg: #1e293b;
     --btn-text: #ffffff;
+    --btn-border: #334155;
+    --quote-bg: #f0fdf4;
+    --quote-border: #16a34a;
+    --quote-text: #166534;
+    --mini-card-bg: #fffbebf5;
+    --mini-card-border: #fef3c7;
+    --mini-card-title: #92400e;
 }
 
-/* Regras de Alto Contraste */
+/* --- MODO ALTO CONTRASTE --- */
 body.alto-contraste {
-    --bg-color: #000000;
-    --text-color: #ffff00; /* Texto amarelo para alto contraste */
-    --card-bg: #121212;
+    --bg-primary: #000000;
+    --bg-card: #121212;
+    --bg-subtle: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-heading: #ffff00; /* Amarelo em destaque */
+    --border-color: #ffffff;
+    --accent-teal: #00ffff;
+    --accent-amber: #ffff00;
+    --hero-bg: #000000;
+    --toolbar-bg: #000000;
+    --toolbar-text: #ffffff;
     --btn-bg: #ffff00;
     --btn-text: #000000;
+    --btn-border: #ffffff;
+    --quote-bg: #1e1e1e;
+    --quote-border: #ffff00;
+    --quote-text: #ffff00;
+    --mini-card-bg: #1e1e1e;
+    --mini-card-border: #ffffff;
+    --mini-card-title: #ffff00;
+}
+
+/* --- RESET E LAYOUT --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Permite alteração dinâmica do JS */
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Layout Responsivo */
 .container {
-    width: 90%;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0 1.25rem;
+}
+
+/* --- BARRA DE ACESSIBILIDADE --- */
+.bar-acessibilidade {
+    background-color: var(--toolbar-bg);
+    color: var(--toolbar-text);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--btn-border);
 }
 
 .toolbar {
@@ -40,29 +89,195 @@ body {
     gap: 0.5rem;
 }
 
+.toolbar-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
 .btn-group {
     display: flex;
     gap: 0.5rem;
 }
 
-button {
+.btn-group button {
     background-color: var(--btn-bg);
     color: var(--btn-text);
-    border: 2px solid currentColor;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    font-weight: bold;
+    border: 1px solid var(--btn-border);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-button:focus-visible {
-    outline: 3px solid #005fcc;
+.btn-group button:hover,
+.btn-group button:focus-visible {
+    opacity: 0.9;
+    outline: 2px solid var(--accent-teal);
 }
 
+/* --- CABEÇALHO HERO --- */
+.hero {
+    background: var(--hero-bg);
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem 0;
+    margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: inherit;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+/* --- CARDS E CONTEÚDO --- */
 .card {
-    background-color: var(--card-bg);
-    padding: 1.5rem;
+    background-color: var(--bg-card);
     border-radius: 8px;
-    margin-top: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1.8rem;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.border-teal {
+    border-left: 6px solid var(--accent-teal);
+}
+
+.border-amber {
+    border-left: 6px solid var(--accent-amber);
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--bg-subtle);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+}
+
+.card-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-heading);
+    margin-bottom: 0.6rem;
+}
+
+.authors, .methodology {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.card-body {
+    padding: 1.8rem;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    color: var(--text-heading);
+    margin: 1.5rem 0 0.8rem 0;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+.card-body h3:first-child {
+    margin-top: 0;
+}
+
+.card-body h4 {
+    font-size: 1rem;
+    color: var(--text-heading);
+    margin: 1rem 0 0.5rem 0;
+}
+
+.card-body p, .card-body ul {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.card-body ul {
+    padding-left: 1.25rem;
+}
+
+/* --- ELEMENTOS DE DESTAQUE --- */
+.concept-box {
+    background-color: var(--bg-subtle);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.highlight-quote {
+    background-color: var(--quote-bg);
+    border-left: 4px solid var(--quote-border);
+    color: var(--quote-text);
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.25rem 0;
+}
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.8rem;
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+.grid-list li {
+    background-color: var(--bg-subtle);
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.25rem 0;
+}
+
+.mini-card {
+    background-color: var(--mini-card-bg);
+    border: 1px solid var(--mini-card-border);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.mini-card h4 {
+    color: var(--mini-card-title);
+    margin-top: 0;
+}
+
+.mini-card p {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
 }

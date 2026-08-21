@@ -3,36 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Acessível e Responsivo</title>
+    <title>Reflexões Acadêmicas: Filosofia e Saúde</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="header-acessibilidade">
+    <!-- Barra de Ferramentas de Acessibilidade -->
+    <header class="bar-acessibilidade" role="banner">
         <div class="container toolbar">
             <span class="toolbar-title">Acessibilidade:</span>
             <div class="btn-group">
-                <button id="btn-contraste" aria-pressed="false" aria-label="Alternar alto contraste">
+                <button id="btn-contraste" type="button" aria-pressed="false" aria-label="Alternar modo de alto contraste">
                     Alto Contraste ◐
                 </button>
-                <button id="btn-aumentar-texto" aria-label="Aumentar tamanho do texto">
+                <button id="btn-aumentar-texto" type="button" aria-label="Aumentar o tamanho da fonte">
                     A+
                 </button>
-                <button id="btn-diminuir-texto" aria-label="Diminuir tamanho do texto">
+                <button id="btn-diminuir-texto" type="button" aria-label="Diminuir o tamanho da fonte">
                     A-
                 </button>
             </div>
         </div>
     </header>
 
+    <!-- Cabeçalho Principal -->
+    <header class="hero">
+        <div class="container">
+            <h1>Portal de Reflexões Acadêmicas</h1>
+            <p>Sínteses de estudos sobre humanização, saúde integral e relações de poder.</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
     <main class="container" id="conteudo-principal">
-        <section class="card">
-            <h1>Acessibilidade e Responsividade na Web</h1>
-            <p>
-                Este layout utiliza unidades relativas para permitir que a alteração de tamanho de fonte funcione perfeitamente em todas as seções.
-            </p>
-        </section>
+        
+        <!-- Artigo 1: Saúde Integral -->
+        <article class="card">
+            <header class="card-header border-teal">
+                <span class="badge">Revista Enfermagem Digital Cuidado e Promoção da Saúde (2019)</span>
+                <h2>Reflexões sobre o ser humano integral e a concepção de saúde</h2>
+                <p class="authors"><strong>Autores:</strong> Mariana Marques Arantes e Aurino Lima Ferreira (UFPE)</p>
+                <p class="methodology"><strong>Metodologia:</strong> Abordagem hermenêutica de contribuições filosóficas contemporâneas.</p>
+            </header>
+
+            <section class="card-body">
+                <h3>1. Objetivo Principal</h3>
+                <p>Apresentar uma visão multidimensional e integral do ser humano a partir de referenciais filosóficos contemporâneos, propondo a superação de visões fragmentadas e reducionistas da saúde para embasar práticas mais complexas de promoção da saúde e do cuidado.</p>
+
+                <h3>2. Principais Conceitos e Fundamentação</h3>
+                
+                <div class="concept-box">
+                    <h4>Superação do Paradigma Cartesiano</h4>
+                    <p>Rompimento com o modelo cartesiano (corpo físico vs. mente) que já não atende às demandas do século XXI. Busca-se superar dicotomias como: <em>Mente/Corpo</em>, <em>Razão/Emoção</em> e <em>Natureza/Cultura</em>.</p>
+                </div>
+
+                <h4>As Cinco Dimensões Humanas (Ferdinand Röhr)</h4>
+                <ul class="grid-list">
+                    <li><strong>Física:</strong> O corpo biológico; precondição para a existência.</li>
+                    <li><strong>Sensorial:</strong> Captação da realidade através dos sentidos físicos.</li>
+                    <li><strong>Emocional:</strong> Conecta o mundo interior ao exterior; centro da psique.</li>
+                    <li><strong>Mental:</strong> Exclusiva dos humanos; autoconsciência e lógica.</li>
+                    <li><strong>Espiritual:</strong> Valores éticos, existenciais e intuição (norteada pelo bem-estar e harmonia).</li>
+                </ul>
+
+                <blockquote class="highlight-quote">
+                    <strong>Equiprimacia:</strong> Princípio de que nenhuma dimensão humana é superior à outra. A saúde física é tão relevante quanto a mental, emocional e espiritual.
+                </blockquote>
+
+                <h4>Sistema Operacional Integrado - SOI (Ken Wilber)</h4>
+                <p>Quatro perspectivas indissociáveis para observar qualquer fenômeno humano:</p>
+                <ul>
+                    <li><strong>Intrassubjetivo/Individual:</strong> O eu interior.</li>
+                    <li><strong>Intersubjetivo/Individual:</strong> O comportamento exterior.</li>
+                    <li><strong>Intrassubjetivo/Coletivo:</strong> O meio cultural.</li>
+                    <li><strong>Intersubjetivo/Coletivo:</strong> A estrutura social.</li>
+                </ul>
+
+                <h3>3. Discussão e Implicações para a Saúde</h3>
+                <ul>
+                    <li><strong>A Revolução do Amor:</strong> O sentido da vida e a saúde estão atrelados ao afeto e às relações interpessoais saudáveis.</li>
+                    <li><strong>Afetividade e Enfermagem:</strong> Cuidar e educar são práticas afetuosas. As competências emocionais em saúde envolvem a escuta empática, comunicação assertiva, equilíbrio e gestão de conflitos.</li>
+                    <li><strong>Cuidar de Quem Cuida:</strong> Urgência em garantir a saúde integral dos próprios profissionais de saúde.</li>
+                </ul>
+            </section>
+        </article>
+
+        <!-- Artigo 2: Corpos Dóceis -->
+        <article class="card">
+            <header class="card-header border-amber">
+                <span class="badge">Revista Linguagem, Ensino e Educação - Lendu (2017)</span>
+                <h2>Do ser humano ao animal: os corpos dóceis de cada época</h2>
+                <p class="authors"><strong>Autora:</strong> Thamiris Dondóssola de Souza (UNESC)</p>
+                <p class="methodology"><strong>Gênero:</strong> Ensaio de Reflexão Filosófica e Análise Literária</p>
+            </header>
+
+            <section class="card-body">
+                <h3>1. Tese Principal</h3>
+                <p>O estudo propõe a extensão do conceito de <strong>"corpos dóceis"</strong>, formulado por Michel Foucault, para além do ser humano, aplicando-o à condição dos animais. Argumenta-se que os animais estão submetidos a dinâmicas de controle, disciplina e dominação semelhantes às impostas aos corpos humanos ao longo da história.</p>
+
+                <h3>2. Principais Pontos Abordados</h3>
+                <div class="grid-cards">
+                    <div class="mini-card">
+                        <h4>Conceito de Foucault</h4>
+                        <p>O corpo dócil (submetido, utilizado e transformado pelo poder) transposto para a exploração animal.</p>
+                    </div>
+                    <div class="mini-card">
+                        <h4>A Indústria da Carne</h4>
+                        <p>Manifestação prática da dominação, onde corpos animais são moldados, confinados e processados mecanicamente.</p>
+                    </div>
+                    <div class="mini-card">
+                        <h4>Análise Literária</h4>
+                        <p>Utilização do livro <em>Desonra (Disgrace)</em>, de J. M. Coetzee, para debater relações morais e crueldade.</p>
+                    </div>
+                    <div class="mini-card">
+                        <h4>Tradição Filosófica</h4>
+                        <p>Denúncias do especismo citando pensadores como Derrida, Montaigne, Nietzsche, Peter Singer e Foer.</p>
+                    </div>
+                </div>
+
+                <h3>3. Conclusão</h3>
+                <p>A dominação e o adestramento impostos aos animais na sociedade contemporânea decorrem do mesmo mecanismo de poder disciplinar que historicamente buscou tornar os corpos humanos produtivos e submissos.</p>
+            </section>
+        </article>
+
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Compilação de Estudos Acadêmicos</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
